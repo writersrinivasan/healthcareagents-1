@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: #06080f;
+  color: #f4f7ff;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(246, 179, 0, 0.35);
+}
+
+/* Animated brand background */
+.brand-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(1100px 600px at 12% 8%, rgba(246, 179, 0, 0.16), transparent 60%),
+    radial-gradient(1000px 700px at 88% 18%, rgba(245, 49, 43, 0.14), transparent 55%),
+    radial-gradient(1200px 800px at 50% 100%, rgba(18, 201, 192, 0.16), transparent 60%),
+    linear-gradient(160deg, #070a14 0%, #0a0e1a 45%, #080b16 100%);
+}
+
+.brand-grid {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: radial-gradient(circle at 50% 40%, black, transparent 78%);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(14px);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(100deg, #ffd873, #f6b300 40%, #ff5a3c 78%, #f5312b);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 8s ease infinite;
+}
+
+.text-gradient-vital {
+  background: linear-gradient(100deg, #5eead4, #22d3ee 55%, #12c9c0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.ring-glow {
+  box-shadow: 0 0 0 1px rgba(246, 179, 0, 0.35), 0 18px 60px -18px rgba(246, 179, 0, 0.4);
+}
+
+/* Thin custom scrollbar for chat + sandbox panels */
+.scroll-slim::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.scroll-slim::-webkit-scrollbar-thumb {
+  background: rgba(246, 179, 0, 0.35);
+  border-radius: 999px;
+}
+.scroll-slim::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
